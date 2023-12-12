@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/obj
+/templates
+/VkStorage.Application/bin/Debug/net8.0
+/VkStorage.Application/obj
+/VkStorage.Domain/bin/Debug/net8.0
+/VkStorage.Domain/obj
+/VkStorage.Infrastructure/bin/Debug/net8.0
+/VkStorage.Infrastructure/obj
+/VkStorage.Web/bin/Debug/net8.0
+/VkStorage.Web/obj
+/VkStorage.Application/Static.cs

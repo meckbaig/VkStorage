@@ -1,7 +1,9 @@
 ﻿using FluentValidation;
 using MediatR;
 using MediatR.Pipeline;
+using Microsoft.Extensions.Logging;
 using System.Reflection;
+using VkStorage.Application;
 using VkStorage.Application.Common.BaseRequests;
 using VkStorage.Application.Common.Behaviours;
 
@@ -20,6 +22,7 @@ public static class DependencyInjection
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         services.AddTransient(typeof(IRequestExceptionHandler<,,>), typeof(GlobalRequestExceptionHandler<,,>));
+        services.AddScoped<IGlobals, Globals>();
 
         return services;
     }

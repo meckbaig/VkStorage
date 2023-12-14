@@ -4,7 +4,7 @@ using VkStorage.Domain.Enums;
 
 namespace VkStorage.Application.DTOs.VkFileDtos
 {
-    public class FilePreviewDto
+    public record FilePreviewDto
     {
         public Guid Guid { get; set; }
         public string FileName { get; set; }

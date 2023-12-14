@@ -1,11 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using VkStorage.Domain.Common;
 
 namespace VkStorage.Domain.Entities;
 
 public class FileChunk : BaseClass
 {
+    [Required]
     public string? FileUrl { get; set; }
+    [Required]
     [ForeignKey(nameof(VkFileId))]
     public int VkFileId { get; set; }
     public VkFile VkFile { get; set; }

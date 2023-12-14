@@ -33,7 +33,9 @@ namespace VkStorage.Web.Controllers
         {
             var query = new GetFileByIdQuery() { userId = userId, vkFileGuid = vkFileGuid };
             var result = await _mediator.Send(query);
-            return result.ToJsonResponseAsync();
+            if (result.GetException() != null)
+                throw result.GetException() ?? new Exception(result.Message);
+            return new FileStreamResult(result.ContentStream, result.FileType);
         }
 
         [HttpPost]
